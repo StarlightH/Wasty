@@ -8,7 +8,21 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Facebook } from '@ionic-native/facebook/ngx';
+import firebase from 'firebase/app'
 
+var firebaseConfig = {
+  apiKey: "AIzaSyDoJnV9PuZZoJ97peHKgePEMHorbqJdcXQ",
+  authDomain: "wasty-a344d.firebaseapp.com",
+  databaseURL: "https://wasty-a344d.firebaseio.com",
+  projectId: "wasty-a344d",
+  storageBucket: "wasty-a344d.appspot.com",
+  messagingSenderId: "459659208193",
+  appId: "1:459659208193:web:2593471d14c96022c84200",
+  measurementId: "G-SZ1TJYMVNT"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -16,6 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
